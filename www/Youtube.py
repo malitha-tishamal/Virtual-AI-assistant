@@ -25,6 +25,7 @@ def takeCommand():
     except:
          pass
 
- takeCommand()
+    takeCommand()
+
 
 
