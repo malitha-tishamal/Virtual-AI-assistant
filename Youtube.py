@@ -33,12 +33,19 @@ def takeCommand():
             listener.adjust_for_ambient_noise(source)  # Adjust for background noise
             voice = listener.listen(source)
             command = listener.recognize_google(voice).lower()  # Convert to lowercase for consistency
+            print(f"Recognized command: {command}")  # Debugging: Print the recognized command
             if 'play' in command:
                 song = command.replace('play', '').strip()
-                talk(song)
-                pywhatkit.playonyt(song)
+                if song:  # Ensure a song name is provided
+                    print(f"Playing song: {song}")
+                    talk(song)
+                    pywhatkit.playonyt(song)
+                else:
+                    print("No song name detected after 'play'.")
+                    talk("Please specify a song name to play.")
             else:
-                print("No valid command detected.")
+                print("No valid command detected. Command did not contain 'play'.")
+                talk("I did not detect a valid command. Please say 'play' followed by the song name.")
     except sr.UnknownValueError:
         print("Sorry, I did not understand the audio.")
         talk("Sorry, I did not understand the audio.")
