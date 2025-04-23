@@ -18,13 +18,13 @@ def takecommand():
     r = sr.Recognizer()
 
     try:
-        # Debugging: List available microphones
+        
         print("Available microphones:")
         print("Available microphones:")
         print("0: Microphone (Realtek Audio)")
         print("1: Microphone (USB Audio Device)")
 
-        # Use the correct microphone index (replace 0 with your microphone's index)
+        
         with sr.Microphone(device_index=0) as source:
             print('listening......')
             eel.DisplayMessage('listening......')
