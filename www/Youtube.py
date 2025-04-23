@@ -17,9 +17,9 @@ def takeCommand():
     try:
         with sr.Microphone() as source:
             print("Listening...")
-            listener.adjust_for_ambient_noise(source)  # Adjust for background noise
+            listener.adjust_for_ambient_noise(source) 
             voice = listener.listen(source)
-            command = listener.recognize_google(voice).lower()  # Convert to lowercase for consistency
+            command = listener.recognize_google(voice).lower()  
             print(f"Command received: {command}")
 
             if 'play' in command:
