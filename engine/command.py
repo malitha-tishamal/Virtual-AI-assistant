@@ -24,7 +24,7 @@ def takecommand():
         print("0: Microphone (Realtek Audio)")
         print("1: Microphone (USB Audio Device)")
 
-        
+        e
         with sr.Microphone(device_index=0) as source:
             print('listening......')
             eel.DisplayMessage('listening......')
